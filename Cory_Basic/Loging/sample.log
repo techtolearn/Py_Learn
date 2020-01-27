@@ -1,0 +1,16 @@
+2019-04-16 23:49:36,321:__main__:Tried to divide by zero
+2019-04-16 23:49:51,376:__main__:Tried to divide by zero
+Traceback (most recent call last):
+  File "C:/Learning/Cory_Basic/Loging/LogSample.py", line 31, in div
+    result =  x / y
+ZeroDivisionError: division by zero
+2019-04-16 23:51:16,853:__main__:Tried to divide by zero
+Traceback (most recent call last):
+  File "C:/Learning/Cory_Basic/Loging/LogSample.py", line 33, in div
+    result =  x / y
+ZeroDivisionError: division by zero
+2019-04-16 23:52:24,147:__main__:Tried to divide by zero
+Traceback (most recent call last):
+  File "C:/Learning/Cory_Basic/Loging/LogSample.py", line 35, in div
+    result =  x / y
+ZeroDivisionError: division by zero

@@ -1,0 +1,78 @@
+# https://www.youtube.com/watch?v=FsAPt_9Bf3U&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU&index=37
+'''
+Decorators - Dynamically Alter The Functionality Of Your Functions
+'''
+# below example are belongs to Closures
+
+# example1 -closures
+def outer_fun(msg):
+    message = msg
+
+    def inner_fun():
+        print(message)
+    return inner_fun()  # return inner function()
+
+outer_fun('Hi Decorator')
+
+# example2  -closures
+def outer_fun(msg):
+        def inner_fun():
+            print(msg)
+        return inner_fun  # return inner function as whole
+
+my_fun = outer_fun('Hi Decorator') #direct print will not work
+my_fun()
+
+print('\n')
+# below example are belongs to Decorators
+
+# example 1 - Decorator  instead of pass message we pass direct functions here
+def decorator_function(original_function):
+        def wrapper_function():
+            print('wrapper function executed this before {} function'.format(original_function.__name__))
+            return original_function()  # return as a function
+        return wrapper_function
+
+def display():
+    print("Decorator - we pass function as an arguments")
+my_decorator = decorator_function(display)
+my_decorator()
+print('\n')
+
+# example 2 - declaring Decorator  as same as above  - look at the difference
+def decorator_function(original_function):
+        def wrapper_function():
+            print('wrapper function executed this before {} function'.format(original_function.__name__))
+            return original_function()  # return as a function
+        return wrapper_function
+
+@decorator_function  # by declariing "decorator_function" it replace the my_decorator = decorator_function(display)
+def display():
+    print("we no need to call decorator function here instead just call display function")
+display()
+print('\n')
+# so you can define number of function with argument using decorator function just it will print whaterver display method has
+# note that - we no need declare decorator for each display function, but here it will not print wrapper function values it just calls
+def display_info(name,age):
+    print("Display information of the persion : name:{} and age:{} ".format(name,age))
+display_info('Satheesh',38)
+print('\n')
+
+# example 3 - to execute wrapper function along with display
+def decorator_function(original_function):
+        def wrapper_function(*args,**Kwargs):
+            print('wrapper function executed this before {} function'.format(original_function.__name__))
+            return original_function(*args,**Kwargs)  # return as a function
+        return wrapper_function
+# by declaring "decorator_function" it replace the my_decorator = decorator_function(display)
+@decorator_function
+def display():
+    print("we no need to call decorator function here instead just call display function")
+display()
+print('\n')
+@decorator_function
+def display_info(name,age):
+    print("Display information of the persion : name:{} and age:{} ".format(name,age))
+display_info('Satheesh',38)
+
+

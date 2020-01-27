@@ -1,0 +1,35 @@
+# https://www.youtube.com/watch?v=U2ZN104hIcc&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU&index=13
+# the below commands needs to be executed in command prompt or Unix editor only
+pip help  - it will give help
+pip search <PakageName>  - it will list the package
+pip install <package> --user  -- it will install the package
+pip uninstall <Package> --user  - it will uninstall the package
+pip list - it will list out all package installed along with version
+pip list -o  - it will list the package which installed version and latest version
+pip install -U <package name> --user - it will install the updated version
+pip freeze  -- it will listout all package and group together before export
+pip freeze > package.txt  - it will export all the package list
+pip install -r package.txt  - it will install all the packages available in the package file
+pip list -outated  - it will list out all  outdated package
+pip feeze --local | grep -v'^\-e' | cut -d = -f 1 | xargs -nl pip install -U
+--the above command will work in Unix env - it will update all the outdate package at once
+
+
+# https://www.youtube.com/watch?v=N5vscPTWKOk&index=14&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU
+****To create virtual environment using existing environment****
+Install the below
+pip install virtualenv --user
+ environment
+Python -m virtaulenv <directoryname>
+to activate this virtual environment
+Login to the directory where you install virtual env
+type below
+cd Scripts/activate.bat
+now your virtual machine is activated
+
+
+================================================
+Alternative command 'which' (unix) in window is where
+using where
+where pip -it will which directories is having pip command
+pip freeze --local > package.txt   --It will export dependency from local of your virtual machine package
